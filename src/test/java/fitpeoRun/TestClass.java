@@ -31,7 +31,6 @@ public class TestClass extends BaseClass{
 		revenueCalculator = new FitpeoRevenueCalculatorPage(driver);
 		revenueCalculator.scrollToSlider();
 		revenueCalculator.adjustSlider();
-		
 	}
 
 }
