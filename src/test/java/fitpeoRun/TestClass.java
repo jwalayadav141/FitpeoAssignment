@@ -3,6 +3,8 @@ package fitpeoRun;
 import java.time.Duration;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import baseTest.BaseClass;
@@ -24,13 +26,19 @@ public class TestClass extends BaseClass{
 	public void revenueCal() {
 		revenueCalculator = new FitpeoRevenueCalculatorPage(driver);
 		revenueCalculator.openRevenueCalculatorPage();
-		revenueCalculator.grossRevenue();
 	}
 	@Test(priority=2)
 	public void medicareEligiblePatients() throws InterruptedException {
 		revenueCalculator = new FitpeoRevenueCalculatorPage(driver);
 		revenueCalculator.scrollToSlider();
-		revenueCalculator.adjustSlider();
+		revenueCalculator.adjustSlider(820);
+		revenueCalculator.updateTheTextField(560);
+		revenueCalculator.adjustSlider(820);
+		revenueCalculator.selectCPTCode("CPT-99091");
+		revenueCalculator.selectCPTCode("CPT-99453");
+		revenueCalculator.selectCPTCode("CPT-99454");
+		revenueCalculator.selectCPTCode("CPT-99474");
+		revenueCalculator.validateRecurring();
 	}
 
 }
