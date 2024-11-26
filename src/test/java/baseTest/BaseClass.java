@@ -19,7 +19,7 @@ public class BaseClass {
 	// used chrome as browser and all the capability added here
 	@BeforeClass
 	public void setUp() {
-		WebDriverManager.chromedriver().browserVersion("77.0.3865.40").setup();
+		WebDriverManager.chromedriver().browserVersion("131.0.6778.86").setup();
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("start-maximized");
 		options.addArguments("enable-automation");
@@ -43,7 +43,7 @@ public class BaseClass {
 	// added teardown method for closing all the browser opened during session
 	@AfterClass
 	public void tearDown() {
-//		driver.quit();
+		driver.quit();
 	}
 
 }
